@@ -1,0 +1,88 @@
+body{
+    background: #ddd;
+    font-family:Tahoma;
+}
+header{
+    font-size: 12px;
+    text-align: right;
+}
+div#corpo{
+    width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 30px #777;
+}
+form#busca{
+    font-size: 12px;
+    text-align: right;
+}
+table.listagem{
+    width:100%;
+    text-align:left;
+    border-collapse:collapse;
+}
+table.listagem tr{
+    height:50px;
+}
+table.listagem td{
+    border:1px solid #ddd;
+    padding:10px;
+}
+table.listagem tr:nth-child(even){
+    background: #f2f2f2;
+}
+table.listagem td:nth-child(1){
+    width:50px;
+    text-align: center;
+}
+table.listagem td:nth-child(3){
+    width:90px;
+    text-align: right;
+}
+table.detalhes{
+    width:100%;
+}
+table.detalhes td{
+    padding: 10px;
+    vertical-align: top;
+}
+img.mini{
+    height: 60px;
+}
+img.full{
+    height: 400px;
+}
+p.pequeno{
+    font-size: 12px;
+    text-align: right;
+}
+footer{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+div.sucesso{
+    padding: 7px 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: rgb(226, 239, 218);
+    color: rgb(74, 116, 67);
+}
+div.aviso{
+    padding: 7px 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: rgb(251, 248, 229);
+    color: rgb(137, 110, 66);
+}
+div.erro{
+    padding: 7px 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: rgb(239, 223, 222);
+    color: rgb(157, 75, 69);
+}
+
+
+
