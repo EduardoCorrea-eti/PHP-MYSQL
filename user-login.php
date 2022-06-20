@@ -17,7 +17,7 @@
         <style>
             div#corpo{
                 width: 270px;
-                font-size: 15pt;
+                font-size: 13pt;
             }
             td{
                 padding: 6px;
@@ -28,15 +28,34 @@
     
         <div id="corpo">
             <?php
-            $u = $_POST['usuario'] ?? null;
-            $s = $_POST['senha'] ?? null;
+                $u = $_POST['usuario'] ?? null;
+                $s = $_POST['senha'] ?? null;
 
-            if(is_null($u) || is_null($s)){
-                require_once "user-login-form.php";
-            }else{
-                echo "Dados foram passados...";
-            }
-
+                if(is_null($u) || is_null($s)){
+                    require_once "user-login-form.php";
+                }else{
+                    $q = "SELECT usuario, nome, senha, tipo FROM usuarios WHERE usuario = '$u' LIMIT 1";
+                    $busca = $banco->query($q);
+                    if(!$busca){
+                        echo msg_erro("Falha ao acessar o banco!");
+                    }else{
+                        if($busca->num_rows > 0){
+                            $reg = $busca->fetch_object();
+                            if(testarHash($s, $reg->senha)){
+                                echo msg_sucesso("Logado com Sucesso!");
+                                $_SESSION['user'] = $reg->usuario;
+                                $_SESSION['nome'] = $reg->nome;
+                                $_SESSION['tipo'] = $reg->tipo;
+                            }else{
+                                echo msg_erro("Senha invalida.");
+                            }
+                        }else{
+                            echo msg_erro("Usuário não existe!");
+                        }
+                       
+                    }
+                }
+                echo voltar();
             ?>
         </div>
 
