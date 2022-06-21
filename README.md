@@ -1,3 +1,3 @@
 # PHP-MYSQL
 Projeto de estudo
-Acompenhamento de projeto de estudo educacional na implemetna de projeto PHP com MYSQL
+Acompenhamento de projeto educacional na implementação de projeto PHP com MYSQL.
