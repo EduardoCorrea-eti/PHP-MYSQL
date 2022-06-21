@@ -37,8 +37,19 @@
                             echo "<tr><td rowspan='3'><img src='$t' class='full'/>";
                             echo "<td><h2>$reg->nome</h2>";
                             echo "Nota: ".number_format($reg->nota, 1)."/10.0";
+                            if(is_admin()){
+                                echo " <span class='material-icons'>
+                                add_circle</span>";
+                                echo " <span class='material-icons'>
+                                edit</span>";
+                                echo " <span class='material-icons'>
+                                delete</span>";
+                            }elseif(is_editor()){
+                                echo " <span class='material-icons'>
+                                edit</span>";
+                            }    
                             echo "<tr><td>$reg->descricao";
-                            echo "<tr><td>Adm";
+                           
                         }else{
                             echo"<tr><td>Nenhum registro encontrado";
                         }

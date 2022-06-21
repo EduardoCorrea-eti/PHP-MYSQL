@@ -31,6 +31,7 @@ function testarHash($senha, $hash){
     return $ok;
 }
 
+//
 function logout(){
     
     unset($_SESSION['user']);
@@ -38,5 +39,41 @@ function logout(){
     unset($_SESSION['tipo']);
 }
 
+//VERIFICA SE O USUARIO ESTÁ LOGADO NO SISTEMA
+function is_logado(){
+    if(empty($_SESSION['user'])){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+//VERIFICA SE O USUÁRIO LOGADO É ADMIN
+function is_admin(){
+    $t = $_SESSION['tipo'];
+    if(is_null($t)){
+        return false;
+    }else{
+        if($t == "admin"){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
+
+//VERIFICA SE O USUÁRIO LOGADO É EDITOR
+function is_editor(){
+    $t = $_SESSION['tipo'];
+    if(is_null($t)){
+        return false;
+    }else{
+        if($t == "editor"){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
 
 
