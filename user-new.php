@@ -32,7 +32,18 @@
                     $tipo       = $_POST['tipo'] ?? null;
 
                     if($senha1 === $senha2){
-                        echo msg_sucesso("Tudo certo para gravar");
+                        if(empty($usuario) || empty($nome) || empty($senha1) || empty($senha2) || empty($tipo)){
+                            echo msg_sucesso("Todos os dados são obrigatórios");
+                        }else{
+                           $senha = gerarHash($senha1);
+                           $q = "INSERT INTO usuarios(usuario, nome, senha, tipo) VALUES('$usuario', '$nome', '$senha', '$tipo')";
+                           if($banco->query($q)){
+                            echo msg_sucesso("Usuário $nome cadastrado com sucesso");
+                           }else{
+                            echo msg_erro("Não foi possível criar o usuário $usuario. Talvez o login já esteja sendo utilizado");
+                           }
+                        }
+                       
                     }else{
                         echo msg_erro("Senhas não conferam. Repita o procedimento");
                     }
