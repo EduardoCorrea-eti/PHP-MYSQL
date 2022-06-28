@@ -19,13 +19,17 @@
     
         <div id="corpo">
         <?php 
-            if(is_logado()){
-                echo msg_erro("Efetue logim para editar seus dados.");
+            if(!is_logado()){
+                echo msg_erro("Efetue <a href='user-login.php'>login</a> para editar seus dados.");
             }else{
-                echo msg_sucesso("Tudo bem");
+                if(!isset($_POST['usuario'])){
+                    include 'user-edit-form.php';
+                }else{
+                    echo msg_sucesso("Dados foram recebidos");
+                }
             }
-        
-        
+            
+            echo voltar();
         ?>
 
 
