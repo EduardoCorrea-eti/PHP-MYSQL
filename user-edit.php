@@ -13,11 +13,21 @@
         <!--https://developers.google.com/fonts/docs/material_icons#icon_font_for_the_web-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
-        <title>???</title>
+        <title>Edição de dados do usuário</title>
     </head>
     <body>
     
         <div id="corpo">
+        <?php 
+            if(is_logado()){
+                echo msg_erro("Efetue logim para editar seus dados.");
+            }else{
+                echo msg_sucesso("Tudo bem");
+            }
+        
+        
+        ?>
+
 
         </div>
         <?php require_once "rodape.php"; ?>
