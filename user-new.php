@@ -29,7 +29,7 @@
                     $nome       = $_POST['nome'] ?? null;
                     $senha1     = $_POST['senha1'] ?? null;
                     $senha2     = $_POST['senha2'] ?? null;
-                    $tipo       = $_POST['tipo'] ?? null;
+                    $tipo       = $_POST['tipo'] ?? null; 
 
                     if($senha1 === $senha2){
                         if(empty($usuario) || empty($nome) || empty($senha1) || empty($senha2) || empty($tipo)){
