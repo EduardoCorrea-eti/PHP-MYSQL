@@ -57,6 +57,7 @@
                     echo msg_sucesso("Dados alterados com sucesso!");
                     logout();
                     echo msg_aviso("Por segurança, efetue o <a href='user-login.php'>login</a> novamente.");
+                  
                    
                 }else{
                     echo msg_erro("Não foi possível alter os dados.");
