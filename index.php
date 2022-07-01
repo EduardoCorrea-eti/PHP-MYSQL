@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
-        <title>Listagem de Jogos</title>
+        <title>Listagem de Jogos. </title>
     
     </head>
     <body>
